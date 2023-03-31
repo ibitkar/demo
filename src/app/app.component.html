@@ -1,0 +1,92 @@
+<!-- <form [formGroup]="ownerForm" autocomplete="off" novalidate *ngIf="clientSessionFormGroup">
+
+  <mat-form-field appearance="outline" floatLabel="always">
+    <mat-label>Session Mode *</mat-label>
+    <mat-select formControlName="SessionMode" id="SessionMode" [(ngModel)]="selectMode">
+        <mat-option *ngFor="let SessionMode of sessionMode ; let i=index" [value]="SessionMode?.ID"
+            (click)="getLocation(i)">
+            {{SessionMode.Name}}</mat-option>
+    </mat-select>
+    <mat-error *ngIf="hasError('SessionMode', 'required')">{{'formValidationMessage'| translate}}
+    </mat-error>
+</mat-form-field>
+
+
+<div class="example-container">
+  <mat-form-field>
+    <input matInput placeholder="Input">
+    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput placeholder="Textarea"></textarea>
+    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Select">
+      <mat-option value="option">Option</mat-option>
+    </mat-select>
+    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+  <mat-checkbox formControlName="hideRequired">Hide required marker</mat-checkbox>
+  <div>
+    <label>Float label: </label>
+    <mat-radio-group formControlName="floatLabel">
+      <mat-radio-button value="auto">Auto</mat-radio-button>
+      <mat-radio-button value="always">Always</mat-radio-button>
+      <mat-radio-button value="never">Never</mat-radio-button>
+    </mat-radio-group>
+  </div>
+</div>
+</form> -->
+
+<!-- <h3>Raised Buttons</h3>
+<div class="button-row">
+  <button mat-raised-button>Basic</button>
+  <button mat-raised-button color="primary">Primary</button>
+  <button mat-raised-button color="accent">Accent</button>
+  <button mat-raised-button color="warn">Warn</button>
+  <button mat-raised-button disabled>Disabled</button>
+  <a mat-raised-button routerLink=".">Link</a>
+</div> -->
+
+
+<form [formGroup]="employeeForm">
+  <div class="example-container">
+    <div>
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label>Name *</mat-label>
+        <input matInput placeholder="Input" formControlName="name">
+        <mat-error *ngIf="hasError('name','required')">
+          This Field is required
+        </mat-error>
+        <mat-error *ngIf="hasError('name','pattern')">
+          Enter Name in valid format
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label>Address</mat-label>
+        <textarea matInput placeholder="Textarea" formControlName="address"></textarea>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label>Department *</mat-label>
+        <mat-select placeholder="Select" formControlName="department">
+          <mat-option *ngFor="let item of departments" [value]="item.id">{{item.name}}</mat-option>
+
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <button mat-raised-button color="primary" (click)="submitForm()">Submit</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,677 @@
+$containerWidth: 85vw;
+
+body {
+  margin: 0px;
+}
+
+.main_container {
+  max-width: $containerWidth;
+  margin: 0 auto;
+}
+
+@mixin search_box ($weight : 264px, $height : 56px) {
+
+  ::ng-deep .mat-form-field-flex {
+    width: $weight;
+    height: $height;
+    border: 1px solid $gray;
+    border-radius: 28px;
+    padding: 0 20px;
+  }
+
+  ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
+    display: none;
+  }
+
+  ::ng-deep .mat-form-field-infix {
+    padding: 0.8em;
+  }
+
+  ::ng-deep .mat-form-field-prefix {
+    margin: 0 15px 0 0;
+  }
+
+  ::ng-deep .mat-form-field {
+    @include font_stack(500, 16px);
+    color: $black;
+  }
+
+  .search-box {
+    margin-top: 25px;
+  }
+}
+
+@mixin common_button ($width : 100px, $height : 40px) {
+  width: $width;
+  height: $height;
+}
+
+@mixin stepper_next_button ($background : $footer-textColor, $pointer-events : none) {
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $background;
+  pointer-events: $pointer-events;
+}
+
+@mixin displayImageCardsStructure () {
+  .page-title {
+    @include font_stack(500, 32px);
+    line-height: 64px;
+    letter-spacing: -0.25px;
+    color: $black;
+    text-align: left;
+  }
+
+  .page-subtitle {
+    @include font_stack(300, 18px);
+    line-height: 24px;
+    text-align: left;
+    color: $black;
+    margin-top: -2%;
+  }
+
+  .case-card {
+    text-align: center;
+    width: 33%;
+  }
+
+  .case-title {
+    @include font_stack(500, 16px);
+    position: absolute;
+    margin-left: 20px;
+    // margin-top: -65px;
+    margin-top: -73px;
+    line-height: 64px;
+    letter-spacing: -0.25px;
+    color: $white;
+  }
+
+  .cases-card-contianer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+  .case-img {
+    border: 4px solid transparent;
+    border-radius: 16px;
+    // margin-right: 25px;
+    // margin-bottom: 20px;
+    width: 350px;
+    height: 290px;
+    margin-bottom: 6px;
+
+  }
+
+  .case-img-selected {
+    border: 4px solid $logo;
+    border-radius: 16px;
+    // margin-right: 25px;
+    // margin-bottom: 20px;
+    width: 350px;
+    height: 290px;
+    margin-bottom: 5px;
+
+  }
+
+  .vector-icon {
+    position: absolute;
+    // margin-left: -25px;
+    margin-left: -35px;
+    margin-top: 260px;
+  }
+
+  .select-card-background {
+    position: absolute;
+    // margin-left: -37px;
+    // margin-top: 10px;
+    margin-left: -45px;
+    margin-top: 15px;
+  }
+
+  .select-icon-white {
+    position: absolute;
+    // margin-left: -31px;
+    // margin-top: 18px;
+    margin-left: -38px;
+    margin-top: 23px;
+  }
+
+  .filter-wrapper {
+    margin-top: 20px;
+    display: flex;
+
+    .filter2 {
+      margin-left: 20px;
+    }
+
+    .search-box-wrapper {
+
+      margin-left: auto;
+      margin-top: -20px;
+      @include search_box(264px, 56px);
+
+    }
+  }
+}
+
+.nextButton {
+  @include common_button(120px, 40px);
+  @include stepper_next_button($footer-textColor, none);
+}
+
+.nextButton-enabled {
+  @include common_button(120px, 40px);
+  @include stepper_next_button($logo, auto);
+}
+
+.saveButton {
+  @include common_button(167px, 40px);
+  float: right;
+  border-radius: 100px;
+  background-color: $logo;
+  display: flex;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.saveButtonText {
+  float: right;
+  text-align: center;
+  letter-spacing: 0.1px;
+  color: $white;
+  cursor: pointer;
+  @include font_stack(500px, 14px)
+}
+
+.previousButton {
+  @include common_button(120px, 40px);
+  float: right;
+  border-radius: 100px;
+  background: $white;
+  border: 1px solid $logo;
+  display: flex;
+  margin-right: 2rem;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.previousNextButtons {
+  margin-top: 1.5rem;
+  margin-bottom: 5rem;
+}
+
+.previousButtonText {
+  line-height: 20px;
+  text-align: center;
+  color: $logo;
+  @include font_stack(500px, 14px)
+}
+
+.plan {
+  @include font_stack(500, 48px);
+  margin-top: 30px;
+}
+
+.description {
+  @include font_stack(300, 18px);
+  margin-top: 32px;
+}
+
+.stepper_width {
+  width: 60%;
+  margin: 60px 0 20px 0;
+}
+
+@mixin tabStructure() {
+  ::ng-deep .mat-tab-label {
+    opacity: 0.5;
+  }
+
+  ::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label-active {
+    color: $black;
+    @include font_stack(400, 20px);
+    opacity: 1 !important;
+  }
+
+  ::ng-deep .mat-ink-bar {
+    background-color: $purple;
+  }
+
+  ::ng-deep .mat-tab-label .mat-tab-label-content {
+    @include font_stack(400, 20px);
+    color: $black;
+  }
+}
+
+@mixin tabStructureForSpaces() {
+  ::ng-deep .mat-tab-label {
+    color: $black;
+    @include font_stack(400, 20px);
+    opacity: 1 !important;
+  }
+
+  ::ng-deep .mat-tab-labels .mat-tab-label-active {
+    color: $purple;
+    @include font_stack(400, 20px);
+    opacity: 1 !important;
+  }
+
+  ::ng-deep .mat-ink-bar {
+    background-color: $purple;
+  }
+}
+
+.saveDraftButton {
+  @include common_button(169px, 40px);
+  background: $white;
+  border: 1px solid $logo;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  float: right;
+  margin-right: 1.6vw;
+}
+
+.saveDraftButtonText {
+  line-height: 20px;
+  text-align: center;
+  color: $logo;
+  @include font_stack(500, 12px);
+}
+
+.nextStepButton {
+  @include common_button(169px, 40px);
+  background: $logo;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  float: right;
+}
+
+.nextStepButtonText {
+  line-height: 20px;
+  text-align: center;
+  color: $white;
+  @include font_stack(500, 12px);
+}
+
+.footer {
+  position: sticky;
+  bottom: 0;
+  height: 70px;
+  z-index: 100;
+  background: rgba(235, 235, 235, 0.9);
+
+  .frontBackButtons {
+    margin-top: 1.5vw;
+    margin-left: 12.5vw;
+    padding-left: 1.25vw;
+
+    .left-right-button {
+      border: none;
+      background: none;
+      margin-right: 1vw;
+      margin-top: -2px;
+      cursor: pointer;
+      &:disabled{
+        .arrow-icon {
+          color: $gray-color ;
+          cursor: default;
+        }
+      }
+
+      .arrow-icon {
+        color: $footer-arrow-icon-color;
+        font-size: 40px;
+        cursor: pointer;
+      }
+    }
+
+    .save-next-buttons {
+      margin-left: 0.5vw;
+      margin-top: -4px;
+    }
+  }
+
+  .footerText {
+    padding-top: 1.5vw;
+    margin-left: 55px;
+    @include font_stack_italic(400, 14px);
+    color: $font_stack_italicText;
+  }
+}
+
+@mixin commonHeader_styles($color) {
+  background: $color;
+  backdrop-filter: blur(50px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+@mixin commonHeader_expanded($width) {
+  position: fixed;
+  top: 64px;
+  width: $width;
+  z-index: 9999;
+}
+
+@mixin menu-item-metverse-text($color) {
+  margin-left: 20px;
+  margin-top: 4px;
+  color: $color;
+  line-height: 64px;
+  display: inline-flex;
+}
+
+.sticky_header_margin {
+  margin-top: 65px !important;
+}
+
+.card-Header {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.cards-Footer {
+  background: $selectedCardColorFooter;
+  width: 100%;
+  bottom: 96px;
+  display: flex;
+  left: 0;
+  position: fixed;
+}
+
+.readMoreBtn {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  text-decoration: none;
+  color: $readMore;
+  cursor: pointer;
+  padding-bottom: 10px;
+}
+
+.readMoreArrow {
+  position: relative;
+  top: 0px;
+  right: 5px;
+  font-size: 21px;
+}
+
+.vector-left {
+  position: relative;
+  top: 5px;
+  right: 30px;
+  cursor: pointer;
+}
+
+.vector-right {
+  position: relative;
+  top: 5px;
+  cursor: pointer;
+}
+
+.selectedCards {
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+}
+
+
+@mixin coCreateForms() {
+  .coCreateFormBasicOuterStructure {
+    position: relative;
+    background-color: rgba(243, 243, 243, 0.9);
+  }
+
+  ::ng-deep {
+
+    .mat-form-field-appearance-outline .mat-form-field-outline-thick,
+    .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick,
+    .mat-form-field.mat-focused .mat-form-field-label {
+      color: $logo;
+    }
+
+    .mat-grid-tile-content {
+      // justify-content: left;
+      @include font_stack(400, 16px);
+      line-height: 24px;
+    }
+  }
+
+  ::ng-deep .formField1 {
+    .mat-form-field-wrapper {
+      height: 50px;
+    }
+  }
+
+  ::ng-deep .formField2 {
+    margin-left: -50px;
+
+    .mat-form-field-wrapper {
+      height: 50px;
+    }
+  }
+
+  .box {
+    height: auto;
+    background-color: $white;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.13);
+    border-radius: 3px;
+
+    .Revenuebox {
+      margin: 10px 0px 0px 30px;
+      padding: 30px 60px 0px 0px;
+
+      .boxHeading {
+        @include font_stack(500, 24px);
+        line-height: 32px;
+
+        .purpleNumber {
+          @include font_stack(800, 24px);
+          line-height: 24px;
+          color: $logo;
+
+        }
+      }
+
+      .sideHeading {
+        @include font_stack(500, 16px);
+        line-height: 24px;
+        margin-top: 16px;
+
+        .purpleSideNumber {
+          color: $logo;
+        }
+      }
+
+      .question {
+        @include font_stack(400, 16px);
+        line-height: 24px;
+        letter-spacing: 0.5px;
+        color: $card-title-gray;
+      }
+    }
+  }
+}
+
+.cancelBtn-superAdmin {
+  @include common_button(13.0468vw, 6.568vh);
+  @include font_stack(500, 0.9375vw);
+  border-radius: 20px;
+  border: 1px solid $card-title-gray;
+  background: none;
+  color: $font_stack_italicText;
+  cursor: pointer;
+}
+
+.submitBtn-superAdmin {
+  margin-left: 1.875vw;
+  @include common_button(13.0468vw, 6.568vh);
+  @include font_stack(500, 0.9375vw);
+  border-radius: 20px;
+  border: none;
+  background: $submitButton-disabled;
+  color: $white;
+  cursor: pointer;
+}
+
+.submitBtn-enabled-superAdmin {
+  margin-left: 1.875vw;
+  @include common_button(13.0468vw, 6.568vh);
+  @include font_stack(500, 0.9375vw);
+  border-radius: 20px;
+  border: none;
+  background: $logo;
+  color: $white;
+  cursor: pointer;
+}
+
+
+.id-label {
+  @include font_stack(400, 18px);
+  color: $black;
+}
+
+.id-name {
+  @include font_stack(600, 40px);
+  color: $black;
+}
+
+.requestgrid-label {
+  top: 20px;
+  padding-left: 24px;
+  padding-bottom: 24px;
+  padding-top: 40px;
+}
+
+.eid-text {
+  @include font_stack(400, 16px);
+  margin: 0px !important;
+  color: $black;
+}
+
+.requestor-eid-text {
+  @include font_stack(400, 14px);
+  color: $gray-color;
+}
+
+.not-available {
+  @include font_stack(400, 14px);
+  color: $gray-color;
+  padding-right: 12px;
+}
+
+.assignee-label {
+  margin-bottom: 0px;
+  margin-top: 16px;
+}
+
+.vertical {
+  border-left: 1px solid $vertical-bar;
+  height: 50px;
+  margin-top: 10px;
+}
+
+@mixin toastrStructure() {
+
+  ::ng-deep{
+    .toast-success, .toast-error {
+      margin-top: 250px !important;
+      margin-right: 450px !important;
+      background-color: $white  !important;
+      color: $card-title-black  !important;
+    }
+  
+    .toast-container .ngx-toastr {
+      padding: 10% 5% 3% 5%;
+      width: 350px !important;
+      @include font_stack(400, 16px);
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      text-align: center;
+      background-position: 165px 25px;
+      background-size: 33px;
+    }
+    .toast-success{
+      background-image: url("../../assets/images/toastr-image.png");
+    }
+     .toast-error {
+        background-image: url("../../assets/images/svg/toastrErrorImage.svg");
+    }
+  } 
+}
+
+.singleLineTitleEllipsesForPopUp{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+.adminDialogBoxHeaderName{
+  margin: 4.2139vh 2.27106vw 3.2415vh 2.27106vw;;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+.adminDialogBoxHeaderLabel{
+    display: flex;
+    cursor: default;
+}
+.adminDialogBoxHeaderAction {
+    @include font_stack(600, 1.6117vw);
+    line-height: 3.889vh;
+    letter-spacing: 0.4px;
+    color: $black;
+}
+.adminDialogBoxHeaderActionName {
+    @include font_stack(600, 1.6117vw);
+    line-height: 3.889vh;
+    letter-spacing: 0.4px;
+    color: $purple;
+    margin-left: 0.3663vw;
+}
+.adminDialogBoxRequestDetails{
+    display: flex;
+    cursor: default;
+}
+.adminDialogBoxRequestName{
+  align-self: center;
+  margin-left: 1.465vw;
+}
+.adminDialogBoxRequestNamePlaceholder {
+  @include font_stack(600, 1.0256vw);
+  line-height: 2.5931vh;
+  text-align: right;
+  letter-spacing: 0.4px;
+  color: $delete-popup-text;
+  align-self: center;
+  flex: auto;
+  max-width: 11.442vw;
+}
+.spinnerClass ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+  stroke: $logo;
+}
+.spinnerText {
+  color: $white;
+  text-align: center;
+}
+.adminNoteAddOrEditPopUp .mat-dialog-container {
+  padding: 0 !important;
+}

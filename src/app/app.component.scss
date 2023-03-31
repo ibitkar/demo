@@ -1,0 +1,15 @@
+@import "../app/theme/theme";
+
+
+.example-container {
+
+
+    padding: 20px;
+
+
+    ::ng-deep .mat-mdc-text-field-wrapper{
+        width: 267px;
+    }
+  
+    
+}
